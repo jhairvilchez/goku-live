@@ -1,0 +1,289 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bangers), var(--font-geist), sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ---------- Goku rig ---------- */
+.goku { --hair: #111111; --iris: #111111; }
+.goku[data-ssj='true'] { --hair: #facc15; --iris: #0d9488; }
+.goku .hair { fill: var(--hair); stroke: color-mix(in oklab, var(--hair), black 35%); stroke-width: 2; transition: fill 0.6s ease; }
+.goku .iris { fill: var(--iris); transition: fill 0.6s ease; }
+.goku g { transform-box: view-box; }
+.goku .body { transform-origin: 100px 270px; animation: goku-breathe 2.6s ease-in-out infinite; }
+.goku .head { transform-origin: 100px 108px; }
+.goku .torso { transform-origin: 100px 178px; }
+.goku .arm-l { transform-origin: 70px 118px; animation: goku-arm-idle 2.6s ease-in-out infinite; }
+.goku .arm-r { transform-origin: 130px 118px; animation: goku-arm-idle 2.6s ease-in-out infinite reverse; }
+.goku .leg-l { transform-origin: 88px 178px; }
+.goku .leg-r { transform-origin: 112px 178px; }
+.goku .mouth-open { opacity: 0; transform-origin: 100px 96px; }
+.goku[data-talking='true'] .mouth-closed { opacity: 0; }
+.goku[data-talking='true'] .mouth-open { opacity: 1; animation: goku-talk 0.28s ease-in-out infinite alternate; }
+.goku[data-talking='true'] .head { animation: goku-nod 1.4s ease-in-out infinite; }
+.goku .aura { opacity: 0; transform-origin: 100px 270px; transition: opacity 0.5s; }
+.goku .aura ellipse { fill: #fde047; opacity: 0.35; filter: blur(6px); }
+.goku .aura .aura-inner { fill: #fef9c3; opacity: 0.5; }
+.goku[data-ssj='true'] .aura { opacity: 1; animation: goku-aura 0.35s ease-in-out infinite alternate; }
+.goku .ki-ball, .goku .beam { opacity: 0; }
+.goku .beam { transform-origin: 186px 124px; }
+.goku .ki-ball { transform-origin: 186px 124px; }
+
+@keyframes goku-breathe { 0%,100% { transform: translateY(0) } 50% { transform: translateY(2.5px) scaleY(0.99) } }
+@keyframes goku-arm-idle { 0%,100% { transform: rotate(0deg) } 50% { transform: rotate(3deg) } }
+@keyframes goku-talk { from { transform: scaleY(0.35) } to { transform: scaleY(1.1) } }
+@keyframes goku-nod { 0%,100% { transform: rotate(0) } 30% { transform: rotate(-4deg) } 70% { transform: rotate(3deg) } }
+@keyframes goku-aura { from { transform: scale(1) } to { transform: scale(1.04, 1.07) } }
+
+/* Rose: side sway with alternating waving arms and steps */
+.goku[data-dance='rose'] .body { animation: rose-body 1s ease-in-out infinite; }
+.goku[data-dance='rose'] .arm-l { animation: rose-arm-l 1s ease-in-out infinite; }
+.goku[data-dance='rose'] .arm-r { animation: rose-arm-r 1s ease-in-out infinite; }
+.goku[data-dance='rose'] .leg-l { animation: rose-leg 1s ease-in-out infinite; }
+.goku[data-dance='rose'] .leg-r { animation: rose-leg 1s ease-in-out infinite 0.5s; }
+.goku[data-dance='rose'] .head { animation: rose-head 1s ease-in-out infinite; }
+@keyframes rose-body { 0%,100% { transform: translateX(-10px) rotate(-7deg) } 50% { transform: translateX(10px) rotate(7deg) } }
+@keyframes rose-arm-l { 0%,100% { transform: rotate(150deg) } 50% { transform: rotate(40deg) } }
+@keyframes rose-arm-r { 0%,100% { transform: rotate(-40deg) } 50% { transform: rotate(-150deg) } }
+@keyframes rose-leg { 0%,100% { transform: rotate(0) } 25% { transform: rotate(-14deg) } }
+@keyframes rose-head { 0%,100% { transform: rotate(8deg) } 50% { transform: rotate(-8deg) } }
+
+/* Heart: arms overhead making a heart, bouncing */
+.goku[data-dance='heart'] .arm-l { animation: heart-arm-l 0.6s ease-in-out infinite alternate; }
+.goku[data-dance='heart'] .arm-r { animation: heart-arm-r 0.6s ease-in-out infinite alternate; }
+.goku[data-dance='heart'] .body { animation: heart-body 0.6s ease-in-out infinite alternate; }
+.goku[data-dance='heart'] .head { animation: rose-head 1.2s ease-in-out infinite; }
+@keyframes heart-arm-l { from { transform: rotate(160deg) } to { transform: rotate(150deg) } }
+@keyframes heart-arm-r { from { transform: rotate(-160deg) } to { transform: rotate(-150deg) } }
+@keyframes heart-body { from { transform: translateY(0) scale(1) } to { transform: translateY(-10px) scale(1.03) } }
+
+/* Jump: crouch, leap, tuck */
+.goku[data-dance='jump'] .body { animation: jump-body 1.05s cubic-bezier(.3,.7,.4,1) infinite; }
+.goku[data-dance='jump'] .arm-l { animation: jump-arm-l 1.05s ease-in-out infinite; }
+.goku[data-dance='jump'] .arm-r { animation: jump-arm-r 1.05s ease-in-out infinite; }
+.goku[data-dance='jump'] .leg-l { animation: jump-leg-l 1.05s ease-in-out infinite; }
+.goku[data-dance='jump'] .leg-r { animation: jump-leg-r 1.05s ease-in-out infinite; }
+@keyframes jump-body { 0%,100% { transform: translateY(0) scaleY(1) } 15% { transform: translateY(8px) scaleY(.9) } 50% { transform: translateY(-80px) rotate(-6deg) } 85% { transform: translateY(4px) scaleY(.95) } }
+@keyframes jump-arm-l { 0%,100% { transform: rotate(10deg) } 50% { transform: rotate(170deg) } }
+@keyframes jump-arm-r { 0%,100% { transform: rotate(-10deg) } 50% { transform: rotate(-170deg) } }
+@keyframes jump-leg-l { 0%,100% { transform: rotate(0) } 50% { transform: rotate(35deg) } }
+@keyframes jump-leg-r { 0%,100% { transform: rotate(0) } 50% { transform: rotate(-35deg) } }
+
+/* Spin: tornado turns with arms out */
+.goku[data-dance='spin'] .body { animation: spin-body 0.8s linear infinite; }
+.goku[data-dance='spin'] .arm-l { transform: rotate(95deg); animation: none; }
+.goku[data-dance='spin'] .arm-r { transform: rotate(-95deg); animation: none; }
+@keyframes spin-body { 0% { transform: scaleX(1) translateY(0) } 25% { transform: scaleX(0.1) translateY(-6px) } 50% { transform: scaleX(-1) translateY(-10px) } 75% { transform: scaleX(-0.1) translateY(-6px) } 100% { transform: scaleX(1) translateY(0) } }
+
+/* Robot: jerky stepped moves */
+.goku[data-dance='robot'] .body { animation: robot-body 1.6s steps(1) infinite; }
+.goku[data-dance='robot'] .arm-l { animation: robot-arm-l 1.6s steps(1) infinite; }
+.goku[data-dance='robot'] .arm-r { animation: robot-arm-r 1.6s steps(1) infinite; }
+.goku[data-dance='robot'] .head { animation: robot-head 1.6s steps(1) infinite; }
+@keyframes robot-body { 0% { transform: translateX(0) } 25% { transform: translateX(-8px) } 50% { transform: translateX(0) translateY(3px) } 75% { transform: translateX(8px) } }
+@keyframes robot-arm-l { 0% { transform: rotate(90deg) } 25% { transform: rotate(0) } 50% { transform: rotate(180deg) } 75% { transform: rotate(45deg) } }
+@keyframes robot-arm-r { 0% { transform: rotate(0) } 25% { transform: rotate(-90deg) } 50% { transform: rotate(-45deg) } 75% { transform: rotate(-180deg) } }
+@keyframes robot-head { 0% { transform: rotate(0) } 25% { transform: rotate(-12deg) } 50% { transform: rotate(0) } 75% { transform: rotate(12deg) } }
+
+/* Fusion: step aside, sweep arms, lift knee, point */
+.goku[data-dance='fusion'] .body { animation: fusion-body 2.2s ease-in-out infinite; }
+.goku[data-dance='fusion'] .arm-l { animation: fusion-arm-l 2.2s ease-in-out infinite; }
+.goku[data-dance='fusion'] .arm-r { animation: fusion-arm-r 2.2s ease-in-out infinite; }
+.goku[data-dance='fusion'] .leg-l { animation: fusion-leg-l 2.2s ease-in-out infinite; }
+@keyframes fusion-body { 0%,100% { transform: translateX(20px) } 40% { transform: translateX(-20px) } 70% { transform: translateX(-10px) rotate(10deg) } }
+@keyframes fusion-arm-l { 0%,100% { transform: rotate(-60deg) } 40% { transform: rotate(100deg) } 70%,85% { transform: rotate(120deg) } }
+@keyframes fusion-arm-r { 0%,100% { transform: rotate(-120deg) } 40% { transform: rotate(60deg) } 70%,85% { transform: rotate(-30deg) } }
+@keyframes fusion-leg-l { 0%,40%,100% { transform: rotate(0) } 70%,85% { transform: rotate(40deg) } }
+
+/* Kamehameha: charge at hip, fire forward */
+.goku[data-dance='kamehameha'] .body { animation: kame-body 4.4s ease-in-out forwards; }
+.goku[data-dance='kamehameha'] .arm-l { animation: kame-arm-l 4.4s ease-in-out forwards; }
+.goku[data-dance='kamehameha'] .arm-r { animation: kame-arm-r 4.4s ease-in-out forwards; }
+.goku[data-dance='kamehameha'] .ki-ball { animation: kame-ball 4.4s ease-in-out forwards; }
+.goku[data-dance='kamehameha'] .beam { animation: kame-beam 4.4s ease-out forwards; }
+@keyframes kame-body { 0% { transform: none } 15%,45% { transform: translate(-6px, 8px) rotate(-6deg) } 50%,85% { transform: translate(6px, 4px) rotate(4deg) } 100% { transform: none } }
+@keyframes kame-arm-l { 0% { transform: none } 15%,45% { transform: rotate(-30deg) } 50%,85% { transform: rotate(-95deg) } 100% { transform: none } }
+@keyframes kame-arm-r { 0% { transform: none } 15%,45% { transform: rotate(-20deg) } 50%,85% { transform: rotate(-70deg) } 100% { transform: none } }
+@keyframes kame-ball { 0%,10% { opacity: 0; transform: translate(-90px, 50px) scale(0.2) } 45% { opacity: 1; transform: translate(-90px, 50px) scale(1) } 50%,85% { opacity: 1; transform: scale(1.2) } 100% { opacity: 0 } }
+@keyframes kame-beam { 0%,49% { opacity: 0; transform: scaleX(0) } 55% { opacity: 1; transform: scaleX(1) } 85% { opacity: 1; transform: scaleX(1) scaleY(1.15) } 100% { opacity: 0; transform: scaleX(1) scaleY(0) } }
+
+/* Wave: friendly hello */
+.goku[data-dance='wave'] .arm-r { animation: wave-arm 0.5s ease-in-out infinite alternate; }
+.goku[data-dance='wave'] .head { animation: rose-head 1s ease-in-out infinite; }
+@keyframes wave-arm { from { transform: rotate(-150deg) } to { transform: rotate(-115deg) } }
+
+/* Super Saiyan: power up scream, shaking, then fist pump */
+.goku[data-dance='ssj'] .body { animation: ssj-body 6s ease-in-out forwards; }
+.goku[data-dance='ssj'] .arm-l { animation: ssj-arm-l 6s ease-in-out forwards; }
+.goku[data-dance='ssj'] .arm-r { animation: ssj-arm-r 6s ease-in-out forwards; }
+.goku[data-dance='ssj'] .head { animation: ssj-head 0.08s linear infinite alternate; }
+.goku[data-dance='ssj'] .aura { opacity: 1; animation: goku-aura 0.12s ease-in-out infinite alternate; }
+@keyframes ssj-body { 0% { transform: none } 10%,60% { transform: translateY(10px) scale(1.02, .96) } 70% { transform: translateY(-30px) scale(1.06) } 100% { transform: none } }
+@keyframes ssj-arm-l { 0% { transform: none } 10%,60% { transform: rotate(-25deg) } 70%,95% { transform: rotate(165deg) } 100% { transform: none } }
+@keyframes ssj-arm-r { 0% { transform: none } 10%,60% { transform: rotate(25deg) } 70%,95% { transform: rotate(-165deg) } 100% { transform: none } }
+@keyframes ssj-head { from { transform: translateX(-1.5px) } to { transform: translateX(1.5px) } }
+
+@keyframes banner-pop { 0% { opacity: 0; transform: translateY(-20px) scale(.6) rotate(-4deg) } 60% { opacity: 1; transform: translateY(0) scale(1.08) rotate(-2deg) } 100% { opacity: 1; transform: scale(1) rotate(-2deg) } }
+@keyframes bubble-pop { 0% { opacity: 0; transform: translateY(12px) scale(.85) } 100% { opacity: 1; transform: none } }
+.animate-banner-pop { animation: banner-pop .45s cubic-bezier(.3,1.4,.5,1) both; }
+.animate-bubble-pop { animation: bubble-pop .3s cubic-bezier(.3,1.4,.5,1) both; }
